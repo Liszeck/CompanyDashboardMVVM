@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="CompanyDashboard.View.DashBoard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:hw="http://schemas.hpod9.com/haley/wpf"
+             xmlns:hm="http://schemas.hpod9.com/haley/mvvm"
+             xmlns:local="clr-namespace:CompanyDashboard.View" xmlns:wpf="http://schemas.microsoft.com/netfx/2009/xaml/presentation"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid DataContext="{Binding}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+
+
+        </Grid.RowDefinitions>
+        <Grid Margin="0,0,0,193">
+            
+        <TextBlock HorizontalAlignment="Center" Text="Irányítópult" FontSize="20" Foreground="Aqua"/>
+             
+        </Grid>
+        
+
+        <WrapPanel Margin="10,68,-10,-67" >
+
+            <hw:PlainCard Height="150" Width="200" CornerRadius="10" Margin="10" Mode="Flyer" Background="White" hw:Icon.Default="C:\Users\user\source\repos\CompanyDashboard\CompanyDashboard\Assets\profit.png"  Header="Nyereség" HeaderForeground="Green" SubHeader="Ebben a negyedévben" HeaderAlignment="Left" HeaderBackground="Green" RenderTransformOrigin="0.475,0.729">
+                
+                <Viewbox Margin="20">
+                    <TextBlock Text="{Binding Profit, NotifyOnSourceUpdated=True}" HorizontalAlignment="Center"
+                               VerticalAlignment="Center" Foreground="Gray"/>
+                </Viewbox>
+                    
+                
+
+            </hw:PlainCard>
+            <hw:PlainCard Height="150" Width="200" CornerRadius="10" Margin="10" Mode="Flyer" Background="Blue"
+                 hw:Icon.Default="C:\Users\user\source\repos\CompanyDashboard\CompanyDashboard\Assets\sal.png" Header="Eladások" SubHeader="Ebben a negyedévben" HeaderForeground="White" HeaderAlignment="Left">
+                <Viewbox Margin="20">
+                    <TextBlock Text="{Binding Sales, NotifyOnSourceUpdated=True}" HorizontalAlignment="Center"
+                               VerticalAlignment="Center" Foreground="Gray"/>
+                </Viewbox>
+
+
+            </hw:PlainCard>
+
+            <hw:PlainCard Height="150" Width="200" CornerRadius="10" Margin="10" Mode="Flyer" Background="Black" hw:Icon.Default="C:\Users\user\source\repos\CompanyDashboard\CompanyDashboard\Assets\employee.png" Header="Dolgozók" SubHeader="Aktív munkavállalók" HeaderAlignment="Left"
+                           HeaderForeground="Pink" >
+                <Viewbox Margin="20">
+                    <TextBlock Text="{Binding EmployeeCount, NotifyOnSourceUpdated=True}" HorizontalAlignment="Center"
+                               VerticalAlignment="Center" Foreground="Gray"/>
+                </Viewbox>
+
+
+            </hw:PlainCard>
+
+        </WrapPanel>
+    </Grid>
+</UserControl>
